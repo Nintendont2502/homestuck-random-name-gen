@@ -49,7 +49,7 @@ string getRandPattern(int listSize, string * patternArray){
 
 }
 
-void getName(string pattern, string * name){
+void getName(string pattern){
 
    for (int i = 0; i < 6; i ++){
 

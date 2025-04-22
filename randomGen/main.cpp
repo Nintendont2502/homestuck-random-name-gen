@@ -40,7 +40,7 @@ int main()
 
     string pattern;
 
-    string name[6];
+
 
     cout << "Number of names to generate:\n";
     cin >> nameNo;
@@ -70,12 +70,12 @@ int main()
 
     for (int i = 0; i < nameNo; i ++){
          pattern = getRandPattern(listSize, patternArr);
-            getName(pattern, name);
+            getName(pattern);
 
             if (choice == 1){
                 cout << " ";
                 pattern = getRandPattern(listSize, patternArr);
-            getName(pattern, name);
+            getName(pattern);
 
             }
             cout << ", " << getClass() << " of " << getAspect() << ". " << getBlood() << ".\n";

@@ -11,7 +11,7 @@ void fillList(int listSize, string * patternArray);
 
 string getRandPattern(int listSize, string * patternArray);
 
-void getName(string pattern, string * name);
+void getName(string pattern);
 
 char getC (int index);
 char getV (int index);
