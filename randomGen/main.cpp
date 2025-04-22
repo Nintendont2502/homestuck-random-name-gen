@@ -34,13 +34,7 @@ int main()
     int nameNo = 0;
     int choice = 0;
 
-
-
-
-
     string pattern;
-
-
 
     cout << "Number of names to generate:\n";
     cin >> nameNo;
@@ -56,17 +50,6 @@ int main()
     if (choice > 1 || choice < 0){
         choice = 0;
     }
-
-
-
-
-
-
-
-
-
-
-
 
     for (int i = 0; i < nameNo; i ++){
          pattern = getRandPattern(listSize, patternArr);

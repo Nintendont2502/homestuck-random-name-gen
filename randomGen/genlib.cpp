@@ -1,4 +1,5 @@
 #include "genlib.h"
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -39,11 +40,7 @@ void fillList(int listSize, string * patternArray){
 
 string getRandPattern(int listSize, string * patternArray){
 
-    // Get a different random number each time the program runs
-
-    // Generate a random number between 0 and 100
     int randomNum = rand() % listSize;
-
 
     return patternArray[randomNum];
 
