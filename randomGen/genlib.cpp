@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 #include <ctime>
+#include <cctype>
 using namespace std;
 
 int getSize(){
@@ -50,47 +51,84 @@ string getRandPattern(int listSize, string * patternArray){
 
 void getName(string pattern, string * name){
 
-    cout << "pattern is " << pattern << "\n";
-
    for (int i = 0; i < 6; i ++){
 
     if (pattern[i] == 'C'){
 
-        cout << getC();
+        cout << getC(i);
 
     } else {
-        cout << getV();
+        cout << getV(i);
     }
    }
 
 
 }
 
-char getC ()
+char getC (int index)
 {
   //all consonants:
   //BCDFGHJKLMNPQRSTVWXYZ
   //22 of em
 
-  string cons = "bdcdfghjklmnpqrstvwxyz";
-  int randomNum = rand() % 22;
+  string cons = "bdcdfghjklmnpqrstvwxyzbdcdfghjklmnprstv";
+  string consCap = "BDCDFGHJKLMNPQRSTVWXYZBDCDFGHJKLMNPRSTV";
+  int randomNum = rand() % 39;
   //cout << "random consonant: " << cons[randomNum] << "\n";
 
-  return cons[randomNum];
+
+  if (index == 0){
+    return consCap[randomNum];
+  } else {
+    return cons[randomNum];
+  }
+
 
 }
 
-char getV ()
+char getV (int index)
 {
   //all consonants:
   //aeiouy
   //6 of em
 
-  string vow = "aeiouy";
-  int randomNum = rand() % 6;
+  string vow = "aeiouaeiouaeiouy";
+  string vowCap = "AEIOUAEIOUAEIOUY";
+  int randomNum = rand() % 16;
   //cout << "random consonant: " << cons[randomNum] << "\n";
 
-  return vow[randomNum];
+   if (index == 0){
+    return vowCap[randomNum];
+  } else {
+    return vow[randomNum];
+  }
+}
+
+string getClass(){
+
+    string ass[12] = {"Page", "Heir", "Maid", "Knight", "Sylph", "Seer", "Witch", "Mage", "Thief", "Rogue", "Prince", "Bard"};
+
+   int ranAss = rand() % 12;
+
+
+   return ass[ranAss];
+}
+
+string getAspect(){
+
+    string aspect[12] = {"Breath", "Blood", "Light", "Void", "Space", "Time", "Heart", "Mind", "Life", "Doom", "Hope", "Rage"};
+   int ranAsp = rand() % 12;
+
+
+   return aspect[ranAsp];
 
 }
 
+string getBlood(){
+
+    string blood[12] = {"Rustblood", "Bronzeblood", "Goldblood", "Limeblood", "Oliveblood", "Jadeblood", "Tealblood", "Cobaltblood", "Indigoblood", "Purpleblood", "Violetblood", "Fuschiablood"};
+    int ranBlood = rand() % 12;
+
+    return blood[ranBlood];
+
+}
