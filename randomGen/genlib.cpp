@@ -130,11 +130,19 @@ string getBlood(){
 
 }
 
-void nameGen(int listSize, string * patternArr, int lastName, int classpect, int blood){
+string getMoon(){
+
+string moon[2] = {"Prospit", "Derse"};
+int ranMoon = rand() % 2;
+
+return moon[ranMoon];
+}
+
+void nameGen(int listSize, string * patternArr, int lastName, int classpect, int blood, int moon){
 
     int nameNo = 0;
     string pattern;
-    cout << "Number of names to generate:\n";
+    cout << "\nNumber of names to generate:\n\n";
     cin >> nameNo;
 
 
@@ -159,6 +167,9 @@ void nameGen(int listSize, string * patternArr, int lastName, int classpect, int
             }
             if (blood == 1){
                 cout << ", " << getBlood();
+            }
+            if (moon == 1){
+                cout << ", " << getMoon();
             }
 
             cout << ".\n";

@@ -18,4 +18,5 @@ char getV (int index);
 string getClass();
 string getAspect();
 string getBlood();
-void nameGen(int listSize, string * patternArr, int lastName, int classpect, int blood);
+string getMoon();
+void nameGen(int listSize, string * patternArr, int lastName, int classpect, int blood, int moon);

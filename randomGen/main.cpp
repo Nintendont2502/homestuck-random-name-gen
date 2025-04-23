@@ -37,10 +37,11 @@ int main()
     int lastName = 0;
     int classpect = 0;
     int blood = 0;
+    int moon = 0;
 
 
 
-    while (choice != 5){
+    while (choice != 6){
 
         cout << "Enter choice:\n";
         cout << "1. Last names:";
@@ -63,8 +64,15 @@ int main()
             cout << " OFF\n";
         }
 
-        cout << "4. Generate names with selected options.\n";
-        cout << "5. Quit.\n";
+        cout << "4. Moon alignment:";
+        if (moon == 1){
+            cout << " ON\n";
+        } else {
+            cout << " OFF\n";
+        }
+
+        cout << "5. Generate names with selected options.\n";
+        cout << "6. Quit.\n\n";
 
         cin >> choice;
 
@@ -91,9 +99,16 @@ int main()
             }
         break;
         case 4:
-            nameGen(listSize, patternArr, lastName, classpect, blood);
+            if (moon == 0){
+                moon = 1;
+            } else {
+                moon = 0;
+            }
             break;
         case 5:
+            nameGen(listSize, patternArr, lastName, classpect, blood, moon);
+            break;
+        case 6:
             delete(patternArr);
             return 0;
             break;
