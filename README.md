@@ -2,9 +2,14 @@ A program that randomly generates Homestuck troll names, using canon consonant/v
 
 Features:
     - Toggleable last name generation
+   
     - Toggleable bloodtype generation
+    
     - Toggleable classpect generation
+   
     - Toggleable moon alignment
+   
     - State of the art industry leading lack of UI 
+   
     - Occasionally creates something that looks like a name!
   
