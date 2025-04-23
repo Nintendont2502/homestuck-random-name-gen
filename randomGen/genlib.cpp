@@ -129,3 +129,43 @@ string getBlood(){
     return blood[ranBlood];
 
 }
+
+void nameGen(int listSize, string * patternArr, int lastName, int classpect, int blood){
+
+    int nameNo = 0;
+    string pattern;
+    cout << "Number of names to generate:\n";
+    cin >> nameNo;
+
+
+    if (nameNo <= 0){
+        nameNo = 1;
+    }
+
+    for (int i = 0; i < nameNo; i ++){
+
+         pattern = getRandPattern(listSize, patternArr);
+            getName(pattern);
+
+            if (lastName == 1){
+                cout << " ";
+                pattern = getRandPattern(listSize, patternArr);
+            getName(pattern);
+
+
+            }
+            if (classpect == 1){
+                cout << ", " << getClass() << " of " << getAspect();
+            }
+            if (blood == 1){
+                cout << ", " << getBlood();
+            }
+
+            cout << ".\n";
+
+
+    }
+
+    return;
+
+}

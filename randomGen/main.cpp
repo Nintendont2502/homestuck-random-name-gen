@@ -25,6 +25,7 @@ int main()
 {
 
  srand(time(0));
+
     int listSize = getSize();
 
     string patternArr[listSize];
@@ -33,38 +34,78 @@ int main()
 
     int nameNo = 0;
     int choice = 0;
-
-    string pattern;
-
-    cout << "Number of names to generate:\n";
-    cin >> nameNo;
+    int lastName = 0;
+    int classpect = 0;
+    int blood = 0;
 
 
-    if (nameNo <= 0){
-        nameNo = 1;
-    }
 
-    cout << "Generate last names? (1, yes. 2, no.)\n";
-    cin >> choice;
+    while (choice != 5){
 
-    if (choice > 1 || choice < 0){
-        choice = 0;
-    }
+        cout << "Enter choice:\n";
+        cout << "1. Last names:";
+        if (lastName == 1){
+            cout << " ON\n";
+        } else {
+            cout << " OFF\n";
+        }
+        cout << "2. Classpect:";
+         if (classpect == 1){
+            cout << " ON\n";
+        } else {
+            cout << " OFF\n";
+        }
 
-    for (int i = 0; i < nameNo; i ++){
-         pattern = getRandPattern(listSize, patternArr);
-            getName(pattern);
+        cout << "3. Bloodtype:";
+         if (blood == 1){
+            cout << " ON\n";
+        } else {
+            cout << " OFF\n";
+        }
 
-            if (choice == 1){
-                cout << " ";
-                pattern = getRandPattern(listSize, patternArr);
-            getName(pattern);
+        cout << "4. Generate names with selected options.\n";
+        cout << "5. Quit.\n";
 
+        cin >> choice;
+
+        switch(choice){
+        case 1:
+            if (lastName == 0){
+                lastName = 1;
+            } else {
+                lastName = 0;
             }
-            cout << ", " << getClass() << " of " << getAspect() << ". " << getBlood() << ".\n";
+        break;
+        case 2:
+            if (classpect == 0){
+                classpect = 1;
+            } else {
+                classpect = 0;
+            }
+        break;
+        case 3:
+            if (blood == 0){
+                blood = 1;
+            } else {
+                blood = 0;
+            }
+        break;
+        case 4:
+            nameGen(listSize, patternArr, lastName, classpect, blood);
+            break;
+        case 5:
+            delete(patternArr);
+            return 0;
+            break;
+        default:
+            cout << "Invalid option. Enter number 1 - 5.\n";
+            break;
+        }
 
+        cout << "\n";
 
-    }
+        }
+
 
 
     delete(patternArr);
