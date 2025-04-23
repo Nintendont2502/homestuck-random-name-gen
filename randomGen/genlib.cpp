@@ -9,9 +9,17 @@ using namespace std;
 
 int getSize(){
 
+    //Note: this + fillList *should* work with any list of CV patterns, as long as they follow the same format as the two included files
+    //(First line is number of patterns, each line below that is a CV pattern 6 letters long in all caps, no letters other than C or V)
+    //Just switch out the below line with the appropriate file name. (this program doesnt have any checks for if the file opens correctly,
+    //so just make sure its saved in the correct location. no clue what'll happen otherwise)
+
     ifstream infile("allUniquePatterns_canonOnly.txt");
+    //ifstream infile("allUniquePatterns_withWinterstuck.txt");
+    //^ alternate file with 4 extra CV patterns, taken from a fansession I'm in. Include this if you want a few extra patterns
 
     string temp;
+    //a
 
     getline(infile, temp);
 
@@ -22,7 +30,11 @@ int getSize(){
 
 void fillList(int listSize, string * patternArray){
 
+    //if you changed the input file in getSize(), make sure you change it here too
+
     ifstream infile("allUniquePatterns_canonOnly.txt");
+    //ifstream infile("allUniquePatterns_withWinterstuck.txt");
+
     string temp;
 
     getline(infile, temp);
@@ -64,14 +76,16 @@ void getName(string pattern){
 
 char getC (int index)
 {
+    //yes im counting y as both a vowel and a consonant. sue me
+
   //all consonants:
   //BCDFGHJKLMNPQRSTVWXYZ
   //22 of em
 
+  //repeated common letters to weigh the selection a little. too many q's and z's and x's looks like shit
   string cons = "bdcdfghjklmnpqrstvwxyzbdcdfghjklmnprstv";
   string consCap = "BDCDFGHJKLMNPQRSTVWXYZBDCDFGHJKLMNPRSTV";
   int randomNum = rand() % 39;
-  //cout << "random consonant: " << cons[randomNum] << "\n";
 
 
   if (index == 0){
@@ -85,14 +99,14 @@ char getC (int index)
 
 char getV (int index)
 {
-  //all consonants:
+  //all vowels:
   //aeiouy
   //6 of em
 
+  //repeated common vowels to decrease the likelihood of Y's. fuck em
   string vow = "aeiouaeiouaeiouy";
   string vowCap = "AEIOUAEIOUAEIOUY";
   int randomNum = rand() % 16;
-  //cout << "random consonant: " << cons[randomNum] << "\n";
 
    if (index == 0){
     return vowCap[randomNum];

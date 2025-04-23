@@ -4,19 +4,17 @@
 
 using namespace std;
 
-/*todo:
+/* author: @nintendont2502 on tumblr, https://github.com/Nintendont2502. direct any questions/suggestions/bugs there
+* created: 22/04/2025.
+* last updated: 23/04/2025
+* if youre looking through here im assuming you know how to program. ignore how inefficient this probably is and how little
+* i give a shit about best practices. i spend enough time worrying about that for my uni assignments
+*/
 
-* - add menu? loopable, able to toggle different options on and off
-* - options: last name, bloodtype, classpect - *maybe* true sign? maybe not actually. can i really be assed
-* making sure it aligns with the randomly assigned classpect. fuck that actually
-* maybe ill add moon in to make up for it. bc the thing with two different options really makes up for the thing
-* with 144 different options not being implemented
-* - make program loopable. should be able to run menu, make change (have menu reprint to reflect change? so like. "Last name: ON"
-* or whatever. could be fun to figure out.
-* - have menu reappear after list is generated so options can be changed/more names can be printed without needing to rerun the program
+/*todo:
 * - i would KILL to have a Faggot check in here somewhere. its possible. i know it is. CVCCVC is one of the most common patterns. its just a matter
 * of time
-* - maybe tweak letter balancing. idfk. odds are this is never producing consistent name adjacent things but why not try
+* - maybe tweak letter balancing some more. idfk. odds are this is never producing consistent name adjacent things but why not try
 * - *maybe* tweak pattern balancing? maybe not actually. program is designed to be able to swap pattern lists at runtime without any other code
 * changing - thatd throw it off. sign
 */
