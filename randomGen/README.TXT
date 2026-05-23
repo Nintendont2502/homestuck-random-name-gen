@@ -13,8 +13,9 @@ Enter choice:
 2. Classpect: OFF
 3. Bloodtype: OFF
 4. Moon alignment: OFF
-5. Generate names with selected options.
-6. Quit.
+5. Sign: OFF
+6. Generate names with selected options.
+7. Quit.
 
 To toggle an option, enter it's respective number (e.g. to toggle last names on, enter 1). This menu will loop until you either select 5 (which generates names), or 6 (which ends the program). Once 5 is entered, the program will prompt you to enter the number of names you want to generate - it will then generate that number of names (along with any toggled options - e.g. classpect, bloodtype, etc), before taking you back to the menu to change your choices. This menu will repeat until 6 is entered, and the program ends. 
 
