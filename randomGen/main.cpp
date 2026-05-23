@@ -36,10 +36,11 @@ int main()
     int classpect = 0;
     int blood = 0;
     int moon = 0;
+    int sign = 0;
 
 
 
-    while (choice != 6){
+    while (choice != 7){
 
         cout << "Enter choice:\n";
         cout << "1. Last names:";
@@ -68,9 +69,15 @@ int main()
         } else {
             cout << " OFF\n";
         }
+        cout << "5. Sign:";
+        if (sign == 1){
+            cout << " ON\n";
+        } else {
+            cout << " OFF\n";
+        }
 
-        cout << "5. Generate names with selected options.\n";
-        cout << "6. Quit.\n\n";
+        cout << "6. Generate names with selected options.\n";
+        cout << "7. Quit.\n\n";
 
         cin >> choice;
 
@@ -104,14 +111,21 @@ int main()
             }
             break;
         case 5:
-            nameGen(listSize, patternArr, lastName, classpect, blood, moon);
+            if (sign == 0){
+                sign = 1;
+            } else {
+                sign = 0;
+            }
             break;
         case 6:
+            nameGen(listSize, patternArr, lastName, classpect, blood, moon, sign);
+            break;
+        case 7:
             delete(patternArr);
             return 0;
             break;
         default:
-            cout << "Invalid option. Enter number 1 - 5.\n";
+            cout << "Invalid option. Enter number 1 - 7.\n";
             break;
         }
 
