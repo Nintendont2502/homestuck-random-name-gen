@@ -9,6 +9,8 @@ Features:
     - Toggleable classpect generation
    
     - Toggleable moon alignment
+
+    - All 244 extended zodiac signs. Painstakingly typed out by hand.
    
     - State of the art industry leading lack of UI 
    
